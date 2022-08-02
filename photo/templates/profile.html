@@ -1,0 +1,103 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+
+{% block col2%}
+
+  <div class="box">
+
+      {% for post in user_posts %}
+      <div >
+      <!--<img src="{{user_profile.profileimg.url}}" alt="" style="display: flex; width: 43px; border-radius:50%;height: 43px;">-->
+        <h5>@{{user_profile.user}}</h5>
+    </div>
+   
+      <hr>
+          <div class="image">
+            <img src="{{post.image.url}}" alt="">
+            <br>
+          </div>
+          <hr>
+         </h3>{{post.caption}}<h3>
+            <hr><br>
+          {% endfor%}
+            
+
+      
+                                            
+    
+</div>
+  
+{% endblock%}
+
+{%block col3%}
+<!--<div> 
+    <br>
+    <br>
+    <br>
+    <h3>
+        Total Post - {{ user_post_length }}
+    </h3>
+    <p>
+        bio
+        <hr>
+        {{user_profile.bio}}
+        <hr>
+    </p>
+</div>
+
+<form>
+    
+    <input type="hidden" value="{{user.username}}" name="followers"/>   
+    <input type="hidden" value="{{user_object.username}}" name="user"/>
+    <button type="submit" style="background-color: #ffc0cb; border: #ffc0cb;">{{button_text}}</button>
+
+</form>-->
+<br>
+<br>
+<br><br><br><br>
+
+<form action="/follows" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        
+        {% if user_post_length == 0 %}
+        <span style="color: black; font-size: 27px;"><b>No Post</b></span>
+        {% elif user_post_length == 1 %}
+        <span style="color: black; font-size: 27px;"><b>{{user_post_length}} Post</b></span>
+        {% else %}
+        <span style="color: black; font-size: 27px;"><b>{{user_post_length}} Posts</b></span>
+        {% endif %}
+        <br>
+
+        {% if user_followers == 0 or user_followers == 1 %}
+        
+        <span style="color: black; font-size: 27px;"><b>{{user_followers}} follower</b></span>
+        {% else %}
+
+        <span style="color: black; font-size: 27px;"><b>{{user_followers}} followers</b></span>
+        {% endif %}
+        <br>
+
+        <span style="color: black; font-size: 27px;"><b>{{user_following}} following</b></span>
+        <br>
+        
+        <input type="hidden" value="{{user.username}}" name="follower" />
+        <input type="hidden" value="{{user_object.username}}" name="users" />
+        {% if user_object.username == user.username %}
+            <p>hi<p>
+        {% else %}
+            {% if button_text == 'Follow' %}
+                 <button type="submit" style="background-color: white; border: 2px solid #000;">{{button_text}}</button>
+            {% else %}
+                <button type="submit"><i class="gg-check-o"></i></button>
+            {% endif %}
+        {% endif %}
+
+       
+        
+
+    </div>
+</form>
+{%endblock%}

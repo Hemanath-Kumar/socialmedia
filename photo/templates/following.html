@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load static %}
+
+  {% block col2%}
+  <br><br><br><br><br>
+  {% for post in following %}
+  <div class="box">
+          <a href="/profile/{{post.user}}">
+              <div class="d-flex ">
+              
+                <div class="col2-profile">
+                      <img src="{{post.profileimg.url}}" alt="">
+                </div>
+                    <div class="profile-id">
+                        <p><b>@{{post.user}}</b></p>
+                    </div>
+              </div>
+          </a>
+
+          {% endfor %}
+    {%endblock%}

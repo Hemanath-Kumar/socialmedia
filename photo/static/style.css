@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+
+
+:root{
+    --color-white:hsl(252,30%,100%);
+    --color-light:hsl(252,30%,95%);
+    --color-gray: hsl(252,15%,65%);
+    --color-primary:hsl(252,75%,60%);
+    --color-secondary:hsl(252,100%,90%);
+    --color-success:hsl(120,95%,65%);
+    --color-danger:hsl(0,95%,65%);
+    --color-dark:hsl(252,30%,17%);
+    --color-black:hsl(252,30%,10%);
+
+    --border-radius:2rem;
+    --card-border-radius:1rem;
+    --btn-padding:0.6rem 2rem;
+    --search-padding:0.6rem 1rem;
+   --card-padding:1rem;
+
+   --sticky-top-left:5.4rem;
+   --sticky-top-right:-18rem;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+}
+
+
+/*---------COl-1----------------*/
+
+.col1{
+    margin-top: 1rem;
+    height: max-content;
+    position:sticky;
+    top: 0;
+    
+}
+
+.col1 .menu{
+
+    margin-top:4rem;
+    background:var(--color-white);
+    border-radius:var(--card-border-radius);
+ 
+}
+ .col1  .menu-item{
+    text-decoration: none;
+    color: black;
+    display:flex;
+    height:4.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor:pointer;
+    translate:all 300ms ease;
+    position:relative;
+    left: 30%;
+    
+}
+
+
+
+/*------------col2----------------*/
+
+.col2{
+    margin-top: 2rem;
+}
+
+.col2 .container{
+    width: 80%;
+}
+
+/*---------Main-Box----------------*/
+
+.col2  .box{
+    position: sticky;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    overflow-anchor: none;
+}
+/*---------------DP-image----------------*/
+
+.col2 .box .d-flex .col2-profile img{
+    display: flex;
+    width: 43px;
+    border-radius: 50%;
+    height: 43px;
+    
+}
+/*----------------DP-Name----------------*/
+
+.col2 .box .d-flex  .profile-id{
+    display: flex;
+    margin: 5px 0px 0px 15px;
+
+}
+/*---------------- A-tag ---------------------*/
+.col2 .container .box a{
+    text-decoration: none;
+    color:black
+}
+
+/*----------------Upload content----------------*/
+
+.col2 .box .image img{
+    width: 100%;
+    height: 20%;
+    border-radius: 18px;
+}
+
+/*---------col3----------------*/
+
+.col3{
+    height: max-content;
+    top: 0;
+    
+}
+
+
+.col3 .you-might-know  .col3-profile img{
+    width: 33px;
+    border-radius: 50%;
+    height: 33px;
+    
+}
+
+.col3 .you-might-know {
+    text-decoration: none;
+}
